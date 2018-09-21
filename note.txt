@@ -2,13 +2,26 @@ Needs Done
 
 Login
 1. Password Length Max on create account
-2. Forgot password link
+2. Session might not work on all pages, was able to open education without logging in
 
 Work History
 1. This page is probably not salvageable
 2. Take user through several pages
-3. First, allow user to create an employer(or add a new one)
+3. First, allow user to choose an employer(or add a new one)
 	Then, add job title, start date(month/year), end date(month/year)
 	Finally, have a text box for responsibilities. When submitted, it is displayed below,
 		and the user can add another to the now empty text box, or edit/delete other responsibilities
 
+Education
+1. This loooks pretty solid.
+2. Add view for current education
+
+Skills
+1. Horizontal alignment on this page is garbage
+2. Possibly break into a mult-page setup similar to work history plan
+
+Personal
+1. Page layout looks good
+2. Remove picture
+3. Make this page a "first time login" page
+4. Autofill text fields with current info

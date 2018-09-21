@@ -31,10 +31,14 @@
       if($count == 1) {//count is how many of that user name is in the database
         // session_register("myusername");
 		session_start();
-         $_SESSION['login_user'] = $myusername;
-         header("location: home.php");
+        $_SESSION['login_user'] = $myusername;
+		$sql = "SELECT * FROM admin WHERE username = '$myusername' and password = '$mypassword'";
+		$result = mysqli_query($db,$sql);
+		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$_SESSION['userid'] = $row['userID'];
+		header("location: home.php");
       }else {
-         $error = "Your Login Name or Password is invalid" .$mypassword;
+         $error = "Your Login Name or Password is invalid";
       }
    }
 ?>

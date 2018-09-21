@@ -1,9 +1,8 @@
-<? 
+<?php 
 include('session.php');
-include('Config.php');
-
+error_reporting(E_ALL);
 ini_set('display_errors', 1);
-	if(isset($_POST) && array_key_exists('enter',$_POST)){
+	//if(isset($_POST) && array_key_exists('enter',$_POST)){
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
@@ -14,16 +13,16 @@ ini_set('display_errors', 1);
 	  $myminor = mysqli_real_escape_string($db,$_POST['Minor']); 
 	  $mydistinctions = mysqli_real_escape_string($db,$_POST['Distinctions']); 
       $username = $_SESSION['login_user'];
-
+	$myid = $_SESSION['userid'];
       //this line pulls from the database
-      $sql = "INSERT INTO education VALUES('$username', '$mygrad', '$mydegree', '$myschool', '$mymajor', '$myminor', '$mydistinctions')";
+      $sql = "INSERT INTO education(userID, school, date, major, minor, distinctions) VALUES('$myid', '$myschool', '$mygrad', '$mymajor', '$myminor', '$mydistinctions')";
       $result = mysqli_query($db,$sql);
 	if (!$result) {
     printf("Error: %s\n", mysqli_error($db));
     exit();
 	}
    }
-	}
+	//}
 	else{
 		
 	}

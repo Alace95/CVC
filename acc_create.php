@@ -4,7 +4,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
    include("Config.php");
-   session_start();
    $error = " ";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
@@ -78,10 +77,10 @@ ini_set('display_errors', 1);
             <div style = "margin:30px">
                
                <form action = "" method = "post">
-                          <p><center><label>Email :</label><br><input type="text" name="email" value="" placeholder="Enter an email"></center></p>
-                <p><center><label>UserName  :</label><input type="text" name="username" value="" placeholder="Create a Username"></center></p>  
-                    <p><center><label>Password  :</label><input type="password" name="password" value="" placeholder="Create a Password"></center></p>
-                    <p><center><label>Confirm Password  :</label><input type="password" name="password2" value="" placeholder="Confirm Password"></center></p>
+                          <p><center><label>Email :</label><br><input type="text" name="email" value="" placeholder="Enter an email" required></center></p>
+                <p><center><label>UserName  :</label><input type="text" name="username" value="" placeholder="Create a Username" required></center></p>  
+                    <p><center><label>Password(8 to 12 characters)  :</label><input type="password" name="password" value="" placeholder="Create a Password" pattern=".{8,12}" required title="8 to 12 characters"></center></p>
+                    <p><center><label>Confirm Password  :</label><input type="password" name="password2" value="" placeholder="Confirm Password"  pattern=".{8,12}" required></center></p>
                     <p class="submit"><center><input type="submit" name="commit" value="Create Account" href = "Inputpage.html"></center></p>
                </form>
          

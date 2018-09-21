@@ -1,6 +1,5 @@
 <?php 
 include('session.php'); 
-include('Config.php');
 
 ini_set('display_errors', 1);
 
